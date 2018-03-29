@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-if grep -qE "(Microsoft|WSL)" /proc/version &> /dev/null ; then
+if [[ $(uname -r) =~ Microsoft$ ]]; then
     '/mnt/c/Program Files/Unity/Editor/Unity.exe'
 else
     case "$(uname -s)" in
